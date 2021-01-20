@@ -15,7 +15,7 @@ class Location
     end
 
     def self.least_clients
-        min = 999
+        min = 9999 #an impossibly large number
         least_clients = nil
         @@all.map do |location|
             if location.all_clients.size < min
@@ -24,9 +24,6 @@ class Location
             end   
         end
         least_clients
-        # @@all.min_by do |location|
-        #     location.size
-        # end
     end
 
 end
