@@ -15,15 +15,16 @@ class Trainer
     end
 
     def self.most_clients
-        max = 0
-        most_clients = nil
-        @@all.map do |trainer|
-            if trainer.all_clients.size > max
-                max = trainer.all_clients.size
-                most_clients = trainer
-            end   
-        end
-        most_clients
+        Trainer.all.min_by {|trainer| trainer.all_clients.count}
+        # max = 0
+        # most_clients = nil
+        # @@all.map do |trainer|
+        #     if trainer.all_clients.size < max
+        #         max = trainer.all_clients.size
+        #         most_clients = trainer
+        #     end   
+        # end
+        # most_clients
     end
 
 end
